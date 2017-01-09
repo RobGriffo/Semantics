@@ -24,9 +24,9 @@
 
 ;;;;;;;;;;;;;;;;;;;;JANUARY;;;;;;;;;;;;;;;;;;;;;
 (define after-filter
-  (λ (pred xs)
-    (cond [(or (null? xs) (null? (cdr xs))) '()]                 ;;if input is Null or length < 2 => do nothing
+  (λ (predicate xs)
+    (cond [(or (null? xs) (null? (cdr xs))) '()]                 ;;if input is NULL or length<2 => do nothing
           [else
-           (cond [(pred (car xs))                                ;;check first element with predicate
-                  (cons (cadr xs) (after-filter pred (cdr xs)))] ;;if true, store element to it's right and recursively call function on tail
-                 [else (after-filter pred (cdr xs))])])))        ;;if false, recursively call function on tail.
+           (cond [(predicate (car xs))                                ;;check first element with predicate
+                  (cons (cadr xs) (after-filter predicate (cdr xs)))] ;;if true, store element to it's right and recursively call function on tail
+                 [else (after-filter predicate (cdr xs))])])))        ;;if false, recursively call function on tail.
