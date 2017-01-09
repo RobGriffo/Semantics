@@ -18,3 +18,24 @@ tr([[H1|T1],[H2|T2]],[[H1,H2]|Tail]):-
 
 tr([[H1,H2,H3]|Tail],[[H1|T1],[H2|T2],[H3|T3]]):-
 	tr([T1,T2,T3],Tail).
+
+
+/************************************/
+/****************2015****************/
+/************************************/
+
+
+/***************JANUARY**************/
+
+doublemember(X,Xs) :-
+	member(X,Xs),
+	deleteMember(X,Xs,N), /*removes from list*/
+	member(X,N).
+
+deleteMember(X,[X|T],T).
+deleteMember(X,[Y|T],[Y|T1]):- del(X,T,T1).
+
+
+
+/***************AUGUST***************/
+
