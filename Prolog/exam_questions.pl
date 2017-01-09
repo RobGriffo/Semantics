@@ -30,7 +30,7 @@ doublemember(X,Xs) :-
 	member(X,N).
 
 
-/**Compliments of StackOverflow**/
+/***Compliments of StackOverflow***/
 deleteMember(X,[X|T],T).
 deleteMember(X,[Y|T],[Y|T1]):- del(X,T,T1).
 
