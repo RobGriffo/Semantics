@@ -61,4 +61,5 @@ sorting' _ [] = []
 sorting' p (n:ns) =
     let left = sorting' p (filter (p n) ns)
         right = sorting' p (filter (not . p n ) ns)
-    in left ++ [n] ++ right
+    in left ++ [n] ++ right 
+    
