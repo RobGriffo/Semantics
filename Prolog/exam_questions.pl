@@ -18,7 +18,3 @@ tr([[H1|T1],[H2|T2]],[[H1,H2]|Tail]):-
 
 tr([[H1,H2,H3]|Tail],[[H1|T1],[H2|T2],[H3|T3]]):-
 	tr([T1,T2,T3],Tail).
-
-
-
-sample([H1,H2|T1],T1).
