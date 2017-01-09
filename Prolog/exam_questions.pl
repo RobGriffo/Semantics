@@ -30,11 +30,31 @@ doublemember(X,Xs) :-
 	member(X,N).
 
 
-/***Compliments of StackOverflow***/
+/**Compliments of StackOverflow**/
 deleteMember(X,[X|T],T).
 deleteMember(X,[Y|T],[Y|T1]):- del(X,T,T1).
 
 
 
 /***************AUGUST***************/
+
+noah2([],[],[]).
+noah2([H1|T1],[H2|T2],[H1,H2|T3]):-
+	noah2(T1,T2,T3).
+
+
+/************************************/
+/****************2014****************/
+/************************************/
+
+
+/***************JANUARY**************/
+noahDouble([], []).
+noahDouble([H1, H2 | T], [[H1, H2] | T2]) :-
+	noahDouble(T, T2).
+
+
+/***************AUGUST***************/
+
+
 
