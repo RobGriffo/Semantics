@@ -29,6 +29,8 @@ doublemember(X,Xs) :-
 	deleteMember(X,Xs,N), /*removes from list*/
 	member(X,N).
 
+
+/**Compliments of StackOverflow**/
 deleteMember(X,[X|T],T).
 deleteMember(X,[Y|T],[Y|T1]):- del(X,T,T1).
 
