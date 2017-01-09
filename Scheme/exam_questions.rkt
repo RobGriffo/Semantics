@@ -41,11 +41,31 @@
 
 ;;;;;;;;;;;;;;;;;;;;AUGUST;;;;;;;;;;;;;;;;;;;;;
 
-(define (reverse-with-count xs ys)
-	(reverse (flatten (repeat-list xs ys))))
+(define (reverse-with-count_ xs ys)
+	(reverse (flatten (repeat-list_ xs ys))))
 
-(define (repeat x y)
+(define (repeat_ x y)
 	(map (lambda(fn) x) (range y)))
 
-(define (repeat-list xs ys)
-	(map (lambda(x y) (repeat x y)) xs ys))
+(define (repeat-list_ xs ys)
+	(map (lambda(x y) (repeat_ x y)) xs ys))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;2014;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;AUGUST;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;Contributed by github.com/cieran;;;;;;;;;;
+(define (add-numbers xs)
+  (sum-them (flatten xs)))
+
+(define (sum-them xs)
+  (apply + (find-nums xs)))
+
+(define (find-nums xs)
+  (cond [(<(length xs)2) '()]
+         [else (cond [(number? (car xs))
+         (cons (car xs) (find-nums (cdr xs)))]
+        [else (find-nums (cdr xs))])]))
