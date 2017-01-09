@@ -1,4 +1,4 @@
-#lang racket
+#lang scheme
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;2016;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -12,3 +12,21 @@
 
 (define (repeat-list xs ys)
 	(map (lambda(x y) (repeat x y)) xs ys))
+
+;;;;;;;;;;;;;;;;;;;;AUGUST;;;;;;;;;;;;;;;;;;;;;
+
+(define (tr xs)
+  (apply map list xs))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;2015;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;JANUARY;;;;;;;;;;;;;;;;;;;;;
+(define after-filter
+  (λ (pred xs)
+    (cond [(or (null? xs) (null? (cdr xs))) '()]                 ;;if input is Null or length < 2 => do nothing
+          [else
+           (cond [(pred (car xs))                                ;;check first element with predicate
+                  (cons (cadr xs) (after-filter pred (cdr xs)))] ;;if true, store element to it's right and recursively call function on tail
+                 [else (after-filter pred (cdr xs))])])))        ;;if false, recursively call function on tail.
