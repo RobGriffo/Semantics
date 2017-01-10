@@ -57,7 +57,7 @@
 
 ;;;;;;;;;;;;;;;;;;;;;AUGUST;;;;;;;;;;;;;;;;;;;;;
 
-;;;;;;Contributed by github.com/cieran;;;;;;;;;;
+;;;;;;Contributed by github.com/cieran;;;;;;;;;;;
 (define (add-numbers xs)
   (sum-them (flatten xs)))
 
