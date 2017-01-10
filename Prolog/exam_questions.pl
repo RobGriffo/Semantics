@@ -32,7 +32,7 @@ doublemember(X,Xs) :-
 
 /**Compliments of StackOverflow**/
 deleteMember(X,[X|T],T).
-deleteMember(X,[Y|T],[Y|T1]):- del(X,T,T1).
+deleteMember(X,[Y|T],[Y|T1]):- deleteMember(X,T,T1).
 
 
 
